@@ -22,10 +22,16 @@ if (is_null($email)) {
 }
 
 //or
+$email = $request->post['email'];
+
+//or
 $email = $request->post('email');
 
 //or set a default value
 $email = $request->post('email', 'xxx@xxx.com');
+
+//or get all post data as an array.
+$post = $request->post->toArray();
 ```
 
 支持get, post, request, server, cookie, session数据的获取。
@@ -49,3 +55,15 @@ $request = new \Goenitz\Request\Request(false, false);
 
 - $_FILES 处理
 - 添加一些帮助函数
+
+#### change logs
+
+##### 0.02
+
+- 添加 `$request->post["key"]` 获取方式
+- `ArrayObject` 类添加`toArray`方法， 现在可以通过 `$post = $request->post->toArray();` 直接获取整个post的数据
+- `Request` 类添加一些注释，便于IDE进行代码提示
+
+##### 0.01
+
+- 初始功能

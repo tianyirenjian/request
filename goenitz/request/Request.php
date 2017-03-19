@@ -8,6 +8,22 @@
 
 namespace Goenitz\Request;
 
+/**
+ * Class Request
+ * @method mixed get($key, $default = null) get $_GET
+ * @method mixed post($key, $default = null) get $_POST
+ * @method mixed request($key, $default = null) get $_REQUEST
+ * @method mixed server($key, $default = null) get $_SERVER
+ * @method mixed cookie($key, $default = null) get $_COOKIE
+ * @method mixed session($key, $default = null) get $_SESSION
+ *
+ * @property ArrayObject get
+ * @property ArrayObject post
+ * @property ArrayObject request
+ * @property ArrayObject server
+ * @property ArrayObject cookie
+ * @property ArrayObject session
+*/
 
 class Request
 {

@@ -1,0 +1,22 @@
+{
+    "name": "goenitz/request",
+    "description": "A class to get request variables.",
+    "keywords": ["request"],
+    "type": "library",
+    "require": {
+        "php": ">5.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "goenitz",
+            "email": "179063828@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Goenitz\\Request\\": "goenitz/request/"
+        }
+    },
+    "minimum-stability": "stable"
+}

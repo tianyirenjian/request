@@ -30,7 +30,7 @@ $email = $request->post('email', 'xxx@xxx.com');
 
 支持get, post, request, server, cookie, session数据的获取。
 
-####安装方式
+#### 安装方式
 
 ```bash
 composer require goenitz/request

@@ -58,7 +58,7 @@ $request = new \Goenitz\Request\Request(false, false);
 
 #### change logs
 
-##### 0.02
+##### 0.10
 
 - 添加 `$request->post["key"]` 获取方式
 - `ArrayObject` 类添加`toArray`方法， 现在可以通过 `$post = $request->post->toArray();` 直接获取整个post的数据

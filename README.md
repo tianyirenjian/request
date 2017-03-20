@@ -48,7 +48,7 @@ $ip = $request->server->REMOTE_ADDR
 // etc.
 ```
 
-从0.20版本开始支持 $_FILES
+从v1.0.0版本开始支持 $_FILES
 
 ```php
 $files = $request->files->toArray();
@@ -84,7 +84,7 @@ $request = new \Goenitz\Request\Request(false, false);
 
 #### change logs
 
-##### 0.20
+##### 0.20 => v1.0.0
 
 - 添加 $_FILES 支持
 

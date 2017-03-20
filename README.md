@@ -1,6 +1,12 @@
 Request
 ===========
 
+#### 安装方式
+
+```bash
+composer require goenitz/request
+```
+
 在我们获取get或者post参数的时候是这样的
 
 ```php
@@ -36,11 +42,31 @@ $post = $request->post->toArray();
 
 支持get, post, request, server, cookie, session数据的获取。
 
-#### 安装方式
-
-```bash
-composer require goenitz/request
+```php
+$page = $request->get->page;
+$ip = $request->server->REMOTE_ADDR
+// etc.
 ```
+
+从0.20版本开始支持 $_FILES
+
+```php
+$files = $request->files->toArray();
+
+$file = $request->files->file;
+//or
+$file = $request->files('file');
+//or
+$file = $request->files['file'];
+
+$file->getOriginalFileName();  // "32fa828ba61ea8d33395a581970a304e241f5884.gif"
+$file->getOriginalExtension(); // "gif"
+$file->getTempName();          // "C:\Users\tianyi\AppData\Local\Temp\php363C.tmp"
+$file->getType();              // "image/gif"
+$file->getError();             // 0
+$file->save('./1.gif');        // true
+```
+
 
 #### 说明
 
@@ -53,10 +79,14 @@ $request = new \Goenitz\Request\Request(false, false);
 
 #### todo
 
-- $_FILES 处理
+- <del>$_FILES 处理 <del>
 - 添加一些帮助函数
 
 #### change logs
+
+##### 0.20
+
+- 添加 $_FILES 支持
 
 ##### 0.10
 
@@ -67,3 +97,4 @@ $request = new \Goenitz\Request\Request(false, false);
 ##### 0.01
 
 - 初始功能
+

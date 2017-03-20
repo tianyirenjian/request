@@ -16,6 +16,7 @@ namespace Goenitz\Request;
  * @method mixed server($key, $default = null) get $_SERVER
  * @method mixed cookie($key, $default = null) get $_COOKIE
  * @method mixed session($key, $default = null) get $_SESSION
+ * @method File|null files($key) get $_FILE
  *
  * @property ArrayObject get
  * @property ArrayObject post
@@ -23,6 +24,7 @@ namespace Goenitz\Request;
  * @property ArrayObject server
  * @property ArrayObject cookie
  * @property ArrayObject session
+ * @property FileArrayObject files
 */
 
 class Request
@@ -44,6 +46,7 @@ class Request
         if (isset($_SESSION)) {
             $this->data['session'] = new ArrayObject($this->transform($_SESSION));
         }
+        $this->data['files'] = new FileArrayObject($_FILES);
     }
 
     private function transform($variables)
@@ -82,6 +85,8 @@ class Request
                 $value = $arguments[1];
             }
             return $value;
+        } elseif ($name == 'files') {
+            return $this->data[$name]->{$arguments[0]};
         }
         return null;
     }

@@ -48,6 +48,12 @@ $ip = $request->server->REMOTE_ADDR
 // etc.
 ```
 
+//单独的ip方法
+
+```php
+$ip = $request->ip();
+```
+
 从v1.0.0版本开始支持 $_FILES
 
 ```php
@@ -80,9 +86,13 @@ $request = new \Goenitz\Request\Request(false, false);
 #### todo
 
 - <del>$_FILES 处理 <del>
-- 添加一些帮助函数
 
 #### change logs
+
+##### v1.1.0 => v1.0.0
+
+- 添加 ip方法获取ip
+- 修改目录结构
 
 ##### 0.20 => v1.0.0
 

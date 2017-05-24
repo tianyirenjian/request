@@ -90,4 +90,9 @@ class Request
         }
         return null;
     }
+
+    public function ip()
+    {
+        return $this->server('REMOTE_ADDR');
+    }
 }

@@ -7,7 +7,7 @@ Request
 composer require goenitz/request
 ```
 
-在我们获取get或者post参数的时候是这样的
+在我们获取 get 或者 post 参数的时候是这样的
 
 ```php
 $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -40,7 +40,7 @@ $email = $request->post('email', 'xxx@xxx.com');
 $post = $request->post->toArray();
 ```
 
-支持get, post, request, server, cookie, session数据的获取。
+支持 get, post, request, server, cookie, session 数据的获取。
 
 ```php
 $page = $request->get->page;
@@ -48,13 +48,13 @@ $ip = $request->server->REMOTE_ADDR
 // etc.
 ```
 
-//单独的ip方法
+//单独的 ip 方法
 
 ```php
 $ip = $request->ip();
 ```
 
-从v1.0.0版本开始支持 $_FILES
+从 v1.0.0 版本开始支持 $_FILES
 
 ```php
 $files = $request->files->toArray();
@@ -76,20 +76,16 @@ $file->save('./1.gif');        // true
 
 #### 说明
 
-默认会对参数运行trim方法，如果为空字符串，则会转换为null。 
+默认会对参数运行 trim 方法，如果为空字符串，则会转换为 null。 
 你可以给构造函数传递参数来阻止这种行为。
 
 ```php
 $request = new \Goenitz\Request\Request(false, false);
 ```
 
-#### todo
-
-- <del>$_FILES 处理 <del>
-
 #### change logs
 
-##### v1.1.0 => v1.0.0
+##### v1.0.0 => v1.1.0
 
 - 添加 ip方法获取ip
 - 修改目录结构
@@ -101,8 +97,8 @@ $request = new \Goenitz\Request\Request(false, false);
 ##### 0.10
 
 - 添加 `$request->post["key"]` 获取方式
-- `ArrayObject` 类添加`toArray`方法， 现在可以通过 `$post = $request->post->toArray();` 直接获取整个post的数据
-- `Request` 类添加一些注释，便于IDE进行代码提示
+- `ArrayObject` 类添加 `toArray` 方法， 现在可以通过 `$post = $request->post->toArray();` 直接获取整个 post 的数据
+- `Request` 类添加一些注释，便于 IDE 进行代码提示
 
 ##### 0.01
 
